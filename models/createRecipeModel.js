@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 
 
 const recipeSchema = new mongoose.Schema({
-    // image: {
-    //     type: String,
-    //     required: true,
-    // },
+    image: {
+        type: String,
+        required: true,
+    },
     name: {
         type: String,
         required: true,
@@ -20,7 +20,7 @@ const recipeSchema = new mongoose.Schema({
         required: true,
     },
     ingredients: {
-        type: String,
+        type: [],
         required: true,
     },
     likes: {
