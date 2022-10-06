@@ -5,7 +5,6 @@ import mongoose from "mongoose";
 const recipeSchema = new mongoose.Schema({
     image: {
         type: String,
-        required: true,
     },
     name: {
         type: String,

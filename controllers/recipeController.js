@@ -7,8 +7,9 @@ import { User } from "../models/userModel.js";
 export const newRecipe = async (req, res) => {
     console.log(req.user)
     try {
-        const{name,description,ingredients,duration,tags} =req.body
+        const{image,name,description,ingredients,duration,tags} =req.body
         const newRecipe = await CreateRecipe.create({
+            image,
             name,
             description,
             ingredients,
@@ -16,8 +17,10 @@ export const newRecipe = async (req, res) => {
             tags
         });
 
+
         if(newRecipe){
             res.json({
+                image:newRecipe.image,
                 name: newRecipe.name,
                 description:newRecipe.description,
                 ingredients: newRecipe.ingredients,
